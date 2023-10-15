@@ -42,72 +42,82 @@ void draw(void) {
 
 int main(void) {
     srand(time(NULL));
-   
+
     int map_tick = 0;
+    
 
+   
 
-    while (1) {
         //벽이랑 술래
-        for (int i = 0; i < 11; i++) {
-            for (int j = 0; j < 45; j++) {
-                if (i == 0 || i == 10 || j == 0 || j == 44) {
-                    map[i][j] = '#';
-                }
-
-                else if (i >= 4 && i < 7 && j > 0 && j <= 1) {
-
-                    map_tick += 1000;
-                    if (map_tick != 0) {
-                        map[i][j] = '#';
-                    }
-                    else 
-                        if (map_tick % 13000 >= 10000 && map_tick % 13000 < 13000) {
-                        map[i][j] = '@';
-                    }
-                }
-                else
-                {
-                    map[i][j] = ' ';
-                }
+    for (int i = 0; i < 11; i++) {
+        for (int j = 0; j < 45; j++) {
+            if (i == 0 || i == 10 || j == 0 || j == 44) {
+                map[i][j] = '#';
             }
-        }
-        for (int i = 0; i < 11; i++)
-        {
-            for (int j = 0; j < 45; j++)
+
+            else if (i <= 4 && i >= 6 && j == 1)
             {
+               
+                while (map_tick != 0) {
+                    
+                    map_tick += 1000;
+                    if (map_tick != 0)
+                    {
+                        map[4][j] = '#';
+                        map[5][j] = '#';
+                        map[6][j] = '#';
+                        map_tick += 1000;
+                        Sleep(10000);
+                    }
 
-                gotoxy(i, j);
-                printf("%c", map[i][j]);
-                fflush(stdout);
-
+                    map_tick++;
+                    if (map_tick % 13000 == 0)
+                    {
+                        map[4][j] = '@';
+                        map[5][j] = '@';
+                        map[6][j] = '@';
+                        Sleep(3000);
+                    }
+                   
+                }
             }
+            else
+            {
+                map[i][j] = ' ';
+            }
+
         }
+        draw();
+
+    }
+
+    
 
 
-        //무궁화꽃이 피었습니다. 문구 출력
-        for (int i = 12; i <= 12 ; i++)
+        
+        //무궁화 꽃이 피었습니다.
+        for (int i = 12; i < 13; i++)
         {
-            for (int j = 1; j < 2; j++)
+            for (int i = 1; i <= 1; i++)
             {
                 printf("\n");
                 printf("무궁화꽃이피었습니다");
             }
-            
         }
         
 
         //플레이어 상태창 출력
-
+       
         for (int i = 13; i < 14; i++)
         {
             for (int j = 1; j <= 1 ; j++)
             {
                 printf("\n");
-                printf("0Player\n");
-                printf("0Player\n");
-                printf("0Player\n");
-                printf("0Player\n");
-                printf("0Player\n");
+                printf("0Player : %s\n");
+                printf("0Player : %s\n");
+                printf("0Player : %s\n");
+                printf("0Player : %s\n");
+                printf("0Player : %s\n");
 
             }
         }
@@ -164,6 +174,8 @@ int main(void) {
             if (tick % 80 == 0) {
                 int nx = x + dx[dir];
                 int ny = y + dy[dir];
+
+               
 
                 if (nx >= 1 && nx < 10 && ny >= 1 && ny < 44) {
                     if (map[nx][ny] != '1' && map[nx][ny] != '2'
@@ -243,6 +255,12 @@ int main(void) {
                         }
                     }
 
+                    if (map[nx] == '1' && map[nx] == '2'
+                        && map[nx] == '3' && map[nx] == '4')
+                    {
+                        int ny = playery[i] - 1;
+                    }
+
                 }
             }
 
@@ -254,7 +272,7 @@ int main(void) {
         
 
         
-    }
+    
     
 
         return 0;
