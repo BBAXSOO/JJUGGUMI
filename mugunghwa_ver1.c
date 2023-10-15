@@ -8,7 +8,7 @@
 char front_buf;
 void gotoxy(int row, int col);
 void draw(void);
-
+int map_tick = 0;
 int tick = 0;
 char map[100][300], front[100][300];
 
@@ -40,61 +40,73 @@ void draw(void) {
 
 
 
+
 int main(void) {
     srand(time(NULL));
 
-    int map_tick = 0;
-    
-
    
 
-        //벽이랑 술래
-    for (int i = 0; i < 11; i++) {
-        for (int j = 0; j < 45; j++) {
-            if (i == 0 || i == 10 || j == 0 || j == 44) {
-                map[i][j] = '#';
-            }
-
-            else if (i <= 4 && i >= 6 && j == 1)
-            {
-               
-                while (map_tick != 0) {
-                    
-                    map_tick += 1000;
-                    if (map_tick != 0)
-                    {
-                        map[4][j] = '#';
-                        map[5][j] = '#';
-                        map[6][j] = '#';
-                        map_tick += 1000;
-                        Sleep(10000);
-                    }
-
-                    map_tick++;
-                    if (map_tick % 13000 == 0)
-                    {
-                        map[4][j] = '@';
-                        map[5][j] = '@';
-                        map[6][j] = '@';
-                        Sleep(3000);
-                    }
-                   
-                }
-            }
-            else
-            {
-                map[i][j] = ' ';
-            }
-
-        }
-        draw();
-
-    }
-
+    
     
 
-
+    //벽이랑 술래
+    while (1) {
         
+        for (int i = 0; i < 11; i++) {
+            
+            for (int j = 0; j < 45; j++) {
+                
+                if (i == 0 || i == 10 || j == 0 || j == 44) {
+                    map[i][j] = '#';
+                    
+                }
+
+                else if (i >= 4 && i <= 6  && j >=0 && j <= 1 )
+                {   
+                   
+                    if (map_tick >= 10000 && map_tick > 13000)
+                    {
+                        map[i][j] = '@';
+                    }
+                    else 
+                    {
+                        map[i][j] = '#';
+                    }
+                    if (map_tick >= 13000)
+                    {
+                        map_tick = 0;
+                    }
+                    
+                    
+                }
+                else
+                {
+                    map[i][j] = ' ';
+                }
+
+            }
+
+            for (int i = 0; i < 11; i++)
+            {
+                for (int j = 0; j < 45; j++)
+                {
+                    gotoxy(i, j);
+                    printf("%c", map[i][j]);
+                    fflush(stdout);
+                }
+            }
+
+           
+            draw();
+           
+            map_tick += 1000;
+        }
+
+
+
+
+
+
         //무궁화 꽃이 피었습니다.
         for (int i = 12; i < 13; i++)
         {
@@ -104,20 +116,22 @@ int main(void) {
                 printf("무궁화꽃이피었습니다");
             }
         }
-        
+
 
         //플레이어 상태창 출력
-       
+
         for (int i = 13; i < 14; i++)
         {
-            for (int j = 1; j <= 1 ; j++)
+            for (int j = 1; j <= 1; j++)
             {
                 printf("\n");
+                printf("no. of players left : 5\n");
                 printf("0Player : %s\n");
                 printf("0Player : %s\n");
                 printf("0Player : %s\n");
                 printf("0Player : %s\n");
                 printf("0Player : %s\n");
+                printf("%d", map_tick);
 
             }
         }
@@ -175,7 +189,7 @@ int main(void) {
                 int nx = x + dx[dir];
                 int ny = y + dy[dir];
 
-               
+
 
                 if (nx >= 1 && nx < 10 && ny >= 1 && ny < 44) {
                     if (map[nx][ny] != '1' && map[nx][ny] != '2'
@@ -269,12 +283,12 @@ int main(void) {
             Sleep(300);
             tick += 1000;
         }
-        
 
-        
-    
-    
 
+
+
+
+    }
         return 0;
     
 
