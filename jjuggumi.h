@@ -7,11 +7,19 @@
 
 #define PLAYER_MAX		10
 
-bool player[PLAYER_MAX];  // ê¸°ë³¸ê°’ true, íƒˆë½í•˜ë©´ false
-int n_player, n_alive;
-int tick;  // ì‹œê³„
+typedef
+struct {
+	int s0_count;
+	int s1_count;
+	int s2_count;
+	int s3_count;
+} m_player;
 
-// ë¯¸ë‹ˆê²Œì„
+bool player[PLAYER_MAX];  // ±âº»°ª true, Å»¶ôÇÏ¸é false
+int n_player, n_alive;
+int tick;  // ½Ã°è
+
+// ¹Ì´Ï°ÔÀÓ
 //void sample(void);
 void mugunghwa(void);
 //void mugunghwa(void);
