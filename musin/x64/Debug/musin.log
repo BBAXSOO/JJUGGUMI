@@ -1,0 +1,9 @@
+﻿  juldarigi.c
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(46,17): warning C4098: 'jul_str': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(721,17): warning C4098: 'juldarigi': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(728,26): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(729,25): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(735,5): warning C4013: 'jul_but_init'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(792,9): warning C4013: 'jul_display'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\HOME\source\repos\musin\musin\juldarigi.c(853,13): warning C4098: 'juldarigi': 'void' 함수에서 값을 반환하고 있습니다.
+  musin.vcxproj -> C:\Users\HOME\source\repos\musin\x64\Debug\musin.exe
