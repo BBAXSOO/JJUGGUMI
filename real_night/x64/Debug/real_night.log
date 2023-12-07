@@ -1,0 +1,11 @@
+﻿  canvas.c
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.h(22,30): warning C4028: 정식 매개 변수 1이(가) 선언과 다릅니다.
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.c(22,1): warning C4005: 'ROW_MAX': 매크로 재정의
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.h(8,1): message : 'ROW_MAX'의 이전 정의를 참조하십시오.
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.c(23,1): warning C4005: 'COL_MAX': 매크로 재정의
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.h(9,1): message : 'COL_MAX'의 이전 정의를 참조하십시오.
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.c(111,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.c(312,9): warning C4101: 'choice' :참조되지 않은 지역 변수입니다.
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.c(368,13): warning C4098: 'ending': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\dwogu\OneDrive\바탕 화면\real_night\canvas.c(511,25): warning C4013: 'handle_encounter'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  real_night.vcxproj -> C:\Users\dwogu\OneDrive\바탕 화면\real_night\x64\Debug\real_night.exe
